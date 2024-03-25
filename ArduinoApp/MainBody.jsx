@@ -8,7 +8,7 @@ function MainBody(){
             <Text style={styles.titles}>Email Address</Text>
             <TextInput style={styles.input} placeholder='email@example.com'></TextInput>
             <Text style={styles.titles} >Password</Text>
-            <TextInput style={styles.input} placeholder='Enter Your Password'></TextInput>
+            <TextInput secureTextEntry={true} style={styles.input} placeholder='Enter Your Password'></TextInput>
         </View>
     );
 }
