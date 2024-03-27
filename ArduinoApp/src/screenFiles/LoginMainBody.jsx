@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native'
 
-function MainBody(){
+function LoginMainBody(){
 
     return(
         <View style={styles.container}>
@@ -35,4 +35,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default MainBody;
+export default LoginMainBody;

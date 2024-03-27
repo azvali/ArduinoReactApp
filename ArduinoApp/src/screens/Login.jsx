@@ -1,6 +1,6 @@
-import LoginHeader from "../screens/LoginHeader.jsx"
-import LoginMainBody from "../screens/LoginMainBody.jsx"
-import LoginFooter from "../screens/LoginFooter.jsx"
+import LoginHeader from "../screenFiles/LoginHeader.jsx"
+import LoginMainBody from "../screenFiles/LoginMainBody.jsx"
+import LoginFooter from "../screenFiles/LoginFooter.jsx"
 
 function Login(){
     return(

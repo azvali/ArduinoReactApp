@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-function Footer() {
+function LoginFooter() {
     return (
         <View style={styles.container}>
             <Text style={styles.text}>
@@ -28,4 +28,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Footer;
+export default LoginFooter;

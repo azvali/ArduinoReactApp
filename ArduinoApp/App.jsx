@@ -7,9 +7,7 @@ import Login from "./src/screens/Login.jsx"
 function App() {
   return (
     <>
-      <Header />
-      <MainBody/>
-      <Footer/>
+      <Login/>
     </>
   );
 }

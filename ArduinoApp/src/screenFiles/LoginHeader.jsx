@@ -3,7 +3,7 @@ import {StyleSheet, Image} from 'react-native';
 const logoImg = require("../assets/logo.png");
 
 
-function Header() {
+function LoginHeader() {
 
   return (
     <>
@@ -21,4 +21,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Header;
+export default LoginHeader;
