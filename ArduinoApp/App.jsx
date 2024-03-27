@@ -1,8 +1,8 @@
 import React from 'react';
 import { View } from 'react-native';
-import Header from "./Header";
-import MainBody from './MainBody'
-import Footer from './Footer';
+import Header from "./src/screenFiles/LoginHeader";
+import MainBody from './src/screenFiles/LoginMainBody'
+import Footer from './src/screenFiles/LoginFooter';
 
 
 
