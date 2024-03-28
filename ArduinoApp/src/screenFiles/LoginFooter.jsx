@@ -1,12 +1,12 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Button } from "react-native";
 
-function LoginFooter() {
+function LoginFooter({navigation}) {
     return (
         <View style={styles.container}>
             <Text style={styles.text}>
                 Don't have an account?{" "}
-                <Text style={styles.span}>Sign Up</Text>
+                <Button  title="SignUp" onPress={() => navigation.navigate('SignUp')} style={styles.span}>Sign Up</Button>
             </Text>
         </View>
     );

@@ -8,12 +8,12 @@ function Login({navigation}){
     const onPressHandler = () => {
         navigation.navigate('SignUp');
       };
-      
+
     return(
         <>
             <LoginHeader/>
             <LoginMainBody navigation={navigation}/>
-            <LoginFooter/>
+            <LoginFooter navigation={navigation}/>
         </>
     );
 }

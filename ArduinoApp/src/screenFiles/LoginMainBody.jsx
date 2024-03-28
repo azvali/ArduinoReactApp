@@ -1,5 +1,7 @@
 import React from 'react';
 import { View, Text, TextInput, StyleSheet, TouchableOpacity, Button } from 'react-native'
+
+
 function LoginMainBody({navigation}){
 
     return(
