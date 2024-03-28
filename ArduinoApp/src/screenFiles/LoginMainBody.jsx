@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, TextInput, StyleSheet, TouchableOpacity, Button } from 'react-native'
-function LoginMainBody(){
+function LoginMainBody({navigation}){
 
     return(
         <View style={styles.container}>
@@ -8,7 +8,7 @@ function LoginMainBody(){
             <TextInput style={styles.input} placeholder='email@example.com'></TextInput>
             <Text style={styles.titles} >Password</Text>
             <TextInput secureTextEntry={true} style={styles.input} placeholder='Enter Your Password'></TextInput>
-            <Button/>
+            <Button title='Go to SignUp' onPress={() => navigation.navigate('SignUp')} />
         </View>
     );
 }

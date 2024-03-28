@@ -2,11 +2,17 @@ import LoginHeader from "../screenFiles/LoginHeader.jsx"
 import LoginMainBody from "../screenFiles/LoginMainBody.jsx"
 import LoginFooter from "../screenFiles/LoginFooter.jsx"
 
-function Login(){
+function Login({navigation}){
+
+
+    const onPressHandler = () => {
+        navigation.navigate('SignUp');
+      };
+      
     return(
         <>
             <LoginHeader/>
-            <LoginMainBody/>
+            <LoginMainBody navigation={navigation}/>
             <LoginFooter/>
         </>
     );
