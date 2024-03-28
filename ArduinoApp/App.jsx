@@ -1,14 +1,24 @@
 import React from 'react';
 import { View } from 'react-native';
 import Login from "./src/screens/Login.jsx" 
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer, StackActions } from '@react-navigation/native';
+import SignUp from "./src/screens/SignUp.jsx"
 
+
+
+const Stack = createNativeStackNavigator();
 
 
 function App() {
+
   return (
-    <>
-      <Login/>
-    </>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screencreen name = "Login" component={Login}/>
+        <Stack.Screen name = "SignUp" component={SignUp}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 

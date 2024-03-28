@@ -1,6 +1,5 @@
 import React from 'react';
-import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native'
-
+import { View, Text, TextInput, StyleSheet, TouchableOpacity, Button } from 'react-native'
 function LoginMainBody(){
 
     return(
@@ -9,6 +8,7 @@ function LoginMainBody(){
             <TextInput style={styles.input} placeholder='email@example.com'></TextInput>
             <Text style={styles.titles} >Password</Text>
             <TextInput secureTextEntry={true} style={styles.input} placeholder='Enter Your Password'></TextInput>
+            <Button/>
         </View>
     );
 }
