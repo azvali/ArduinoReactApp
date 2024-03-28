@@ -10,7 +10,9 @@ function LoginMainBody({navigation}){
             <TextInput style={styles.input} placeholder='email@example.com'></TextInput>
             <Text style={styles.titles} >Password</Text>
             <TextInput secureTextEntry={true} style={styles.input} placeholder='Enter Your Password'></TextInput>
-            <Button title='Go to SignUp' onPress={() => navigation.navigate('SignUp')} />
+
+            {/* This will be replaced by a proper login function */} 
+            <Button title='Login' onPress={() => navigation.navigate('Home')} />
         </View>
     );
 }

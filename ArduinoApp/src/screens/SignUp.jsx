@@ -1,10 +1,13 @@
-import SignUpHeader from "../screenFiles/SignUpHeader";
+import LoginHeader from "../screenFiles/LoginHeader";
+import SignUpBody from "../screenFiles/SignUpBody";
+import React from "react";
 
 
-function SignUp(){
+function SignUp({navigation}){
     return(
         <>
-        <SignUpHeader/>
+        <LoginHeader/>
+        <SignUpBody navigation={navigation}/>
         </>
     );
 }
