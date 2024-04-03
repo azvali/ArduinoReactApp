@@ -3,6 +3,37 @@ import { View, Text, TextInput, Button, StyleSheet } from "react-native";
 
 
 function SignUpBody({navigation}){
+
+
+    const [email, setEmail] = useState('');
+    const [fullName, setFullName] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+
+    const handleSignUp = async () => {
+        if (password !== confirmPassword) {
+            Alert.alert('Error', 'Passwords do not match.');
+            return;
+        }
+
+
+        try {
+            const response = await axios.post(apiUrl, {
+                email: email,
+                fullName: fullName,
+                password: password, // Ensure your backend hashes the password before storing
+            });
+            Alert.alert('Success', 'You have been registered successfully.');
+
+            // Optionally, navigate to the login screen or elsewhere
+            navigation.navigate('Login');
+        } catch (error) {
+            // Handle the error, e.g., show an alert
+            Alert.alert('Error', 'Registration failed, please try again.');
+            console.error(error);
+        }
+    };
+
     return(
         <>
             <View style={styles.container}>
@@ -15,7 +46,7 @@ function SignUpBody({navigation}){
             <Text style={styles.titles}>Password</Text>
             <TextInput secureTextEntry={true} style={styles.input} placeholder='Enter Your Password'></TextInput>
 
-            <Text style={styles.titles} >Confirm Password</Text>
+            <Text style={styles.titles}>Confirm Password</Text>
             <TextInput secureTextEntry={true} style={styles.input} placeholder='Confirm Your Password'></TextInput>
 
             {/* This will be replaced by a proper Sign Up function 
