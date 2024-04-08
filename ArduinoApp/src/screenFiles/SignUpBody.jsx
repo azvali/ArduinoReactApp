@@ -1,8 +1,36 @@
 import React from "react";
-import { View, Text, TextInput, Button, StyleSheet } from "react-native";
+import { View, Text, TextInput, Button, StyleSheet, useState } from "react-native";
+
+
 
 
 function SignUpBody({navigation}){
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [fullName, setFullName] = useState('');
+
+
+    async function registerUser(email, password){
+        if (password !== confirmPassword) {
+            console.log('Passwords do not match!');
+            return; 
+        }
+    
+        try{
+            await auth().createUserWithEmailAndPassword(email, password)
+        }
+        catch(error){
+            if (error.code === 'auth/email-already-in-use') {
+                console.log('That email address is already in use!');
+              } else if (error.code === 'auth/invalid-email') {
+                console.log('That email address is invalid!');
+              } else {
+                console.error(error);
+              }
+        }
+        
+    }
 
     return(
         <>
@@ -19,11 +47,14 @@ function SignUpBody({navigation}){
             <Text style={styles.titles}>Confirm Password</Text>
             <TextInput secureTextEntry={true} style={styles.input} placeholder='Confirm Your Password'></TextInput>
 
-            <Button title='Sign Up' onPress={() => navigation.navigate('Login')}/>
+            <Button title='Sign Up' onPress={() => registerUser(email, password)}/>
         </View>
         </>
     );
 }
+
+
+
 
 
 const styles = StyleSheet.create({
