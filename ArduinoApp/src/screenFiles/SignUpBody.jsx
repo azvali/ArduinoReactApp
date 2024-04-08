@@ -19,11 +19,6 @@ function SignUpBody({navigation}){
             <Text style={styles.titles}>Confirm Password</Text>
             <TextInput secureTextEntry={true} style={styles.input} placeholder='Confirm Your Password'></TextInput>
 
-            {/* This will be replaced by a proper Sign Up function 
-                Also, we need to assign the input fields to variables and send them to the database 
-                and store them properly. also we can try to make a pop up for the user when he signs up to
-                notify if successful or not maybe if there is an existing email it would notify
-            */} 
             <Button title='Sign Up' onPress={() => navigation.navigate('Login')}/>
         </View>
         </>

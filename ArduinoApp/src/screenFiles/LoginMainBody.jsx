@@ -11,7 +11,6 @@ function LoginMainBody({navigation}){
             <Text style={styles.titles} >Password</Text>
             <TextInput secureTextEntry={true} style={styles.input} placeholder='Enter Your Password'></TextInput>
 
-            {/* This will be replaced by a proper login function */} 
             <Button title='Login' onPress={() => navigation.navigate('Home')} />
         </View>
     );
