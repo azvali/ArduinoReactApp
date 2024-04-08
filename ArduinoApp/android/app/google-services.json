@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "523335011943",
+    "project_id": "r534-b6497",
+    "storage_bucket": "r534-b6497.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:523335011943:android:02e7df91d9d708c6e18ec2",
+        "android_client_info": {
+          "package_name": "com.arduinoapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARUzKxKhKikR-XAn2WmvZHwFFuf_qFCbo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:523335011943:android:9926c4cd3b48af2ae18ec2",
+        "android_client_info": {
+          "package_name": "com.r534.android"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARUzKxKhKikR-XAn2WmvZHwFFuf_qFCbo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
