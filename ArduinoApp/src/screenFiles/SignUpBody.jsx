@@ -2,8 +2,6 @@ import React from "react";
 import { View, Text, TextInput, Button, StyleSheet, useState } from "react-native";
 
 
-
-
 function SignUpBody({navigation}){
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
