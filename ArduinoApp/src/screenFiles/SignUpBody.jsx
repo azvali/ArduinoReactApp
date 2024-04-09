@@ -1,6 +1,7 @@
-import React from "react";
-import { View, Text, TextInput, Button, StyleSheet, useState } from "react-native";
-import auth from '@react-native-firebase/auth'
+import React, {useState} from "react";
+import { View, Text, TextInput, Button, StyleSheet } from "react-native";
+import auth from '@react-native-firebase/auth';
+import firebase from '../../firebase/firebase';
 
 function SignUpBody({navigation}){
     const [email, setEmail] = useState('');
@@ -14,9 +15,14 @@ function SignUpBody({navigation}){
             console.log('Passwords do not match!');
             return; 
         }
+        if (!email || !password) {
+            console.log('Email or password is empty');
+            return;
+        }
     
         try{
-            await auth().createUserWithEmailAndPassword(email, password)
+            await auth().createUserWithEmailAndPassword(email, password);
+            console.log('email created.');
         }
         catch(error){
             if (error.code === 'auth/email-already-in-use') {
@@ -34,16 +40,16 @@ function SignUpBody({navigation}){
         <>
             <View style={styles.container}>
             <Text style={styles.titles}>Email Address</Text>
-            <TextInput style={styles.input} placeholder='name@example.com'></TextInput>
+            <TextInput style={styles.input} placeholder='name@example.com'  value={email} onChangeText={(text) => setEmail(text)}></TextInput>
 
             <Text style={styles.titles} >Full Name</Text>
-            <TextInput secureTextEntry={true} style={styles.input} placeholder='Enter Your Full Name'></TextInput>
+            <TextInput secureTextEntry={true} style={styles.input} placeholder='Enter Your Full Name' value={fullName} onChangeText={(text) => setFullName(text)}></TextInput>
 
             <Text style={styles.titles}>Password</Text>
-            <TextInput secureTextEntry={true} style={styles.input} placeholder='Enter Your Password'></TextInput>
+            <TextInput secureTextEntry={true} style={styles.input} placeholder='Enter Your Password' value={password} onChangeText={(text) => setPassword(text)}></TextInput>
 
             <Text style={styles.titles}>Confirm Password</Text>
-            <TextInput secureTextEntry={true} style={styles.input} placeholder='Confirm Your Password'></TextInput>
+            <TextInput secureTextEntry={true} style={styles.input} placeholder='Confirm Your Password' value={confirmPassword} onChangeText={(text) => setConfirmPassword(text)}></TextInput>
 
             <Button title='Sign Up' onPress={() => registerUser(email, password)}/>
         </View>
