@@ -1,7 +1,7 @@
 import React, {useState} from "react";
-import { View, Text, TextInput, Button, StyleSheet } from "react-native";
+import { View, Text, TextInput, Button, StyleSheet, Alert } from "react-native";
 import auth from '@react-native-firebase/auth';
-import firebase from '../../firebase/firebase';
+
 
 function SignUpBody({navigation}){
     const [email, setEmail] = useState('');
@@ -9,30 +9,51 @@ function SignUpBody({navigation}){
     const [confirmPassword, setConfirmPassword] = useState('');
     const [fullName, setFullName] = useState('');
 
+    function showAlert(message){
+        Alert.alert(
+            "Error",
+            message,
+            [
+              {
+                text: "OK",
+                onPress: () => console.log("OK Pressed"),
+                style: "cancel"
+              }
+            ],
+            {
+              cancelable: true,
+              onDismiss: () => console.log("Alert dismissed")
+            }
+          );
+    }
 
-    async function registerUser(email, password){
+    async function registerUser(){
         if (password !== confirmPassword) {
-            console.log('Passwords do not match!');
+            showAlert('Password Mismatch.');
             return; 
         }
         if (!email || !password) {
-            console.log('Email or password is empty');
+            showAlert('Email or password is empty');
             return;
         }
     
         try{
             await auth().createUserWithEmailAndPassword(email, password);
-            console.log('email created.');
+            showAlert('User created!');
         }
-        catch(error){
+        catch (error) {
+            let errorMessage = error.message; // Default error message
+        
             if (error.code === 'auth/email-already-in-use') {
-                console.log('That email address is already in use!');
-              } else if (error.code === 'auth/invalid-email') {
-                console.log('That email address is invalid!');
-              } else {
-                console.error(error);
-              }
+                errorMessage = 'That email address is already in use!';
+            } else if (error.code === 'auth/invalid-email') {
+                errorMessage = 'That email address is invalid!';
+            }
+            
+            showAlert(errorMessage);
         }
+        // go back to login
+        navigation.navigate('Login');
         
     }
 
@@ -51,7 +72,7 @@ function SignUpBody({navigation}){
             <Text style={styles.titles}>Confirm Password</Text>
             <TextInput secureTextEntry={true} style={styles.input} placeholder='Confirm Your Password' value={confirmPassword} onChangeText={(text) => setConfirmPassword(text)}></TextInput>
 
-            <Button title='Sign Up' onPress={() => registerUser(email, password)}/>
+            <Button title='Sign Up' onPress={() => registerUser()}/>
         </View>
         </>
     );
