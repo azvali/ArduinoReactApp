@@ -16,6 +16,7 @@ function LoginMainBody({navigation}){
 
         try{
             const response = await auth().signInWithEmailAndPassword(email, password);
+            navigation.navigate('Home');
         }
         catch(error){
             let errorMessage = '';
@@ -37,8 +38,6 @@ function LoginMainBody({navigation}){
             }
             showAlert(errorMessage);
         }
-
-        navigation.navigate('Home');
     }
 
 
