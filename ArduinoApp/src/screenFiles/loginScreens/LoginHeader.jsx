@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, Image} from 'react-native';
-const logoImg = require("../assets/logo.png");
+const logoImg = require("../../assets/logo.png");
 
 
 function LoginHeader() {

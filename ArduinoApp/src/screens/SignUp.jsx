@@ -1,5 +1,5 @@
-import LoginHeader from "../screenFiles/LoginHeader";
-import SignUpBody from "../screenFiles/SignUpBody";
+import LoginHeader from "../screenFiles/loginScreens/LoginHeader";
+import SignUpBody from "../screenFiles/signupScreens/SignUpBody";
 import React from "react";
 
 
